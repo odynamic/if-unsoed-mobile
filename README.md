@@ -12,4 +12,4 @@ Aplikasi Android sederhana yang menampilkan informasi Program Studi Informatika,
 ![Screenshot Pertemuan 2](docs/screenshot_pertemuan2.png)
 
 ## Tugas 2 Pertemuan 3
-![Demo Pertemuan 3](docs/demo_perrtemuan3.gif)
+![Demo Pertemuan 3](docs/demo_pertemuan3.gif)
