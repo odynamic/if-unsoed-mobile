@@ -1,4 +1,4 @@
-# Tugas 1 Pertemuan 2
+# Tugas IF Unsoed Mobile
 
 ## Identitas
 - Dyah Ghaniya Putri
@@ -8,5 +8,8 @@
 ## Deskripsi
 Aplikasi Android sederhana yang menampilkan informasi Program Studi Informatika, Fakultas Teknik, Universitas Jenderal Soedirman.  
 
-## Screenshot
-![Screenshot Aplikasi](if-unsoed-mobile.png)
+## Tugas 1 Pertemuan 2
+![Screenshot Pertemuan 2](docs/screenshot_pertemuan2.png)
+
+## Tugas 2 Pertemuan 3
+![Demo Pertemuan 3](docs/demo_perrtemuan3.gif)
