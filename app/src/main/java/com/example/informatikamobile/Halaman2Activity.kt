@@ -35,19 +35,16 @@ class Halaman2Activity : AppCompatActivity() {
     }
 
     private fun initListener() {
-        // Lokasi kampus → buka Google Maps via URL (string.xml)
         binding.layoutLocation.root.setOnClickListener {
             val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.lokasi)))
             startActivity(mapIntent)
         }
 
-        // Instagram → buka link IG HMIF
         binding.layoutIg.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.ig_himpunan)))
             startActivity(intent)
         }
 
-        // Email → buka aplikasi email
         binding.layoutEmail.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:${getString(R.string.email)}")
@@ -55,7 +52,6 @@ class Halaman2Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Telepon → buka dialer
         binding.layoutPhone.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel:${getString(R.string.telepon)}")
@@ -63,7 +59,6 @@ class Halaman2Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Tombol kembali → tutup activity
         binding.btnBack.setOnClickListener {
             finish()
         }
