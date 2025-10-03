@@ -20,7 +20,6 @@ class Halaman2Activity : AppCompatActivity() {
     }
 
     private fun initLayout() {
-        // Set icon + label untuk tiap menu
         binding.layoutPhone.imgIcon.setImageResource(R.drawable.ic_phone)
         binding.layoutPhone.tvLayout.setText(R.string.telepon)
 
@@ -32,6 +31,9 @@ class Halaman2Activity : AppCompatActivity() {
 
         binding.layoutIg.imgIcon.setImageResource(R.drawable.ic_himpunan)
         binding.layoutIg.tvLayout.setText(R.string.himpunan)
+
+        binding.layoutKoleksiBuku.imgIcon.setImageResource(R.drawable.ic_book)
+        binding.layoutKoleksiBuku.tvLayout.setText(R.string.koleksi_buku)
     }
 
     private fun initListener() {
@@ -56,6 +58,11 @@ class Halaman2Activity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel:${getString(R.string.telepon)}")
             }
+            startActivity(intent)
+        }
+
+        binding.layoutKoleksiBuku.root.setOnClickListener {
+            val intent = Intent(this, DaftarBukuActivity::class.java)
             startActivity(intent)
         }
 

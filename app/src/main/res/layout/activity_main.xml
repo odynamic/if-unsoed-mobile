@@ -7,41 +7,51 @@
     <ImageView
         android:id="@+id/iv_gedung"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/gedung_teknik"
-        android:scaleType="fitXY"
+        android:contentDescription="@string/gedung_teknik"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tv_welcome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/welcome_text"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/colorGrayText"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/iv_gedung"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="16dp" />
 
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:padding="16dp"
         android:text="@string/inf_description"
+        android:textColor="@color/black"
+        android:justificationMode="inter_word"
         app:layout_constraintTop_toBottomOf="@id/tv_welcome"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_to_page2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_to_page2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
-        app:layout_constraintTop_toBottomOf="@id/tv_description"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/blue"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

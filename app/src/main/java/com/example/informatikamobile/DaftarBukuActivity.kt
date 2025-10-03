@@ -6,10 +6,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.informatikamobile.adapter.BookAdapter
+import com.example.informatikamobile.data.model.BookDoc
 import com.example.informatikamobile.databinding.ActivityDaftarBukuBinding
+import com.example.informatikamobile.ui.fragment.BookDetailFragment
 import com.example.informatikamobile.viewmodel.MainViewModel
 
-class DaftarBukuActivity : AppCompatActivity() {
+class DaftarBukuActivity : AppCompatActivity(), BookAdapter.OnBookClickListener {
 
     private lateinit var binding: ActivityDaftarBukuBinding
     private val viewModel: MainViewModel by viewModels()
@@ -20,8 +22,8 @@ class DaftarBukuActivity : AppCompatActivity() {
         binding = ActivityDaftarBukuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = BookAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = BookAdapter(emptyList(), this)
         binding.recyclerView.adapter = adapter
 
         viewModel.books.observe(this) { books ->
@@ -30,5 +32,15 @@ class DaftarBukuActivity : AppCompatActivity() {
         }
 
         viewModel.searchBooks("kotlin programming")
+    }
+
+    override fun onBookClick(book: BookDoc) {
+        val fragment = BookDetailFragment(
+            book.title ?: "-",
+            book.authorName?.joinToString(", ") ?: "Unknown Author",
+            book.firstPublishYear?.toString() ?: "-",
+            book.coverId ?: 0
+        )
+        fragment.show(supportFragmentManager, BookDetailFragment::class.java.simpleName)
     }
 }
